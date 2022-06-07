@@ -16,6 +16,10 @@
 
 <script>
 
+let t = fetch('http://localhost/ticker/content.html')
+    .then(res => res.html())
+    .then(data => console.log (data));
+
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /* Loop through a collection of all HTML elements: */
