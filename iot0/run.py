@@ -71,7 +71,7 @@ while True:
                 print("PIR_OFF")
                 send_tcp_message(PT_RealTcpServer_IP, PT_RealTcpServer_PORT, '{"topic": "LIGHT", "value": "OFF"}')
                 send_tcp_message(PT_RealTcpServer_IP, PT_RealTcpServer_PORT,
-                                 '{"topic": "LOG", value: "Turned light off"}')
+                                 '{"topic": "LOG", "value": "Turned light off"}')
 
             conn.sendall(("[TCP] ACK : " + data).encode("UTF-8"))
         else:
