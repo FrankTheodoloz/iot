@@ -1,7 +1,7 @@
 import json
 import socket
 
-from v1 import ticker
+import ticker
 
 TCPServerSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 TCPServerSocket.bind(('192.168.1.19', 65432))

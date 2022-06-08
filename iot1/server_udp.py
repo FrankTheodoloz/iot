@@ -1,7 +1,7 @@
 import json
 import socket
 
-from v1 import ticker
+import ticker
 
 UDPServerSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 UDPServerSocket.bind(("192.168.1.19", 12345))
