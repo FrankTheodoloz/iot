@@ -46,32 +46,32 @@ while True:
                 send_udp_message(IOT1_IP, IOT1_PORT, "BTC-USD")
                 send_udp_message(IOT2_IP, IOT2_PORT, "BTC-USD")
                 send_tcp_message(PT_RealTcpServer_IP, PT_RealTcpServer_PORT,
-                                 '{topic: "LOG", value: "Changed ticker to BTC-USD"}')
+                                 '{"topic": "LOG", "value": "Changed ticker to BTC-USD"}')
 
             if (data == "buttonB"):
                 print("buttonB")
                 send_udp_message(IOT1_IP, IOT1_PORT, "ETH-USD")
                 send_udp_message(IOT2_IP, IOT2_PORT, "ETH-USD")
                 send_tcp_message(PT_RealTcpServer_IP, PT_RealTcpServer_PORT,
-                                 '{topic: "LOG", value: "Changed ticker to ETH-USD"}')
+                                 '{"topic": "LOG", "value": "Changed ticker to ETH-USD"}')
 
             if (data == "buttonC"):
                 print("buttonC")
                 send_udp_message(IOT1_IP, IOT1_PORT, "ADA-USD")
                 send_udp_message(IOT2_IP, IOT2_PORT, "ADA-USD")
                 send_tcp_message(PT_RealTcpServer_IP, PT_RealTcpServer_PORT,
-                                 '{topic: "LOG", value: "Changed ticker to ADA-USD"}')
+                                 '{"topic": "LOG", "value": "Changed ticker to ADA-USD"}')
 
             if (data == "PIR_ON"):
                 print("PIR_ON")
-                send_tcp_message(PT_RealTcpServer_IP, PT_RealTcpServer_PORT, '{topic: "LIGHT", value: "ON"}')
-                send_tcp_message(PT_RealTcpServer_IP, PT_RealTcpServer_PORT, '{topic: "LOG", value: "Turned light on"}')
+                send_tcp_message(PT_RealTcpServer_IP, PT_RealTcpServer_PORT, '{"topic": "LIGHT", "value": "ON"}')
+                send_tcp_message(PT_RealTcpServer_IP, PT_RealTcpServer_PORT, '{"topic": "LOG", "value": "Turned light on"}')
 
             if (data == "PIR_OFF"):
                 print("PIR_OFF")
-                send_tcp_message(PT_RealTcpServer_IP, PT_RealTcpServer_PORT, '{topic: "LIGHT", value: "OFF"}')
+                send_tcp_message(PT_RealTcpServer_IP, PT_RealTcpServer_PORT, '{"topic": "LIGHT", "value": "OFF"}')
                 send_tcp_message(PT_RealTcpServer_IP, PT_RealTcpServer_PORT,
-                                 '{topic: "LOG", value: "Turned light off"}')
+                                 '{"topic": "LOG", value: "Turned light off"}')
 
             conn.sendall(("[TCP] ACK : " + data).encode("UTF-8"))
         else:
