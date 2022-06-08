@@ -1,17 +1,22 @@
 # https://docs.micropython.org/en/latest/esp32/quickref.html
 
-WLAN_SSID = ""
-WLAN_KEY = ""
-# WLAN_SSID = "MediaNet"
-# WLAN_KEY = "ri0a-4a0b-lcyo-7qwb"
+import network
+import time
 
-def do_connect():
-    import network
+def connect(ssid, key):
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
+
+    start = time.ticks_ms;
     if not wlan.isconnected():
-        print('connecting to network...')
-        wlan.connect(WLAN_SSID, WLAN_KEY)
+        print('connecting to network', ssid)
+        wlan.connect(ssid, key)
         while not wlan.isconnected():
-            pass
-    print('network config:', wlan.ifconfig())
+            time.sleep_ms(1000)
+            if (time.ticks_ms - start > 20000):
+                print("Wifi connection timeout")
+                break
+    if (wlan.isconnected()):
+        print("Network connected : ", wlan.ifconfig())
+    return wlan
+
