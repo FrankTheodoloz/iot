@@ -1,8 +1,10 @@
+import json
+from time import *
+
 from cli import *
 from gui import *
-import json
+
 import mqttclient
-from time import *
 
 
 def guiEvent(type, args):
@@ -204,7 +206,7 @@ def check_conn():
 
     while (len(mqttclient.state()['subscriptions']) < 1):
         sleep(5)
-        mqttclient.subscribe("Topic1")
+        mqttclient.subscribe("LIGHT")
         check_conn()
 
 

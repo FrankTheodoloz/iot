@@ -111,7 +111,7 @@ def cliEvent(type, args):
 
 def print_cli_usage():
     print
-    "MQTT Broker"
+    "MqttBroker"
     print
     ""
     print
