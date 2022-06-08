@@ -73,9 +73,8 @@ while True:
                 send_tcp_message(PT_RealTcpServer_IP, PT_RealTcpServer_PORT,
                                  '{topic: "LOG", value: "Turned light off"}')
 
-        conn.sendall(("[TCP] ACK : " + data).encode("UTF-8"))
-    else:
-        print("[TCP] connection closed")
-        done = True
-
+            conn.sendall(("[TCP] ACK : " + data).encode("UTF-8"))
+        else:
+            print("[TCP] connection closed")
+            done = True
     conn.close()
