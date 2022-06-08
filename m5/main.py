@@ -1,4 +1,5 @@
 from m5stack import lcd, buttonA, buttonB, buttonC
+
 import socket
 import time
 import pir
@@ -14,9 +15,9 @@ PIR_LASTSTATE = 0
 lcd.clear()
 lcd.setCursor(0, 0)
 lcd.setColor(lcd.WHITE)
-lcd.print("ButtonA=\n")
-lcd.print("ButtonC=\n")
-lcd.print("ButtonD=\n")
+lcd.print("ButtonA : Ticker BTC-USD\n")
+lcd.print("ButtonB : Ticker ETH-USD\n")
+lcd.print("ButtonC : Ticker ADA-USD\n")
 
 
 def sendmsg(ip, port, message):
@@ -48,4 +49,3 @@ while True:
             sendmsg(SERVER_IP, SERVER_PORT, "PIR_OFF")
         PIR_LASTSTATE = PIR_CURRENTSTATE
     time.sleep(0.2)
-
