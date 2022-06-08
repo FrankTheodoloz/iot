@@ -7,8 +7,9 @@ import wifi
 
 WLAN_SSID = "MediaNet"
 WLAN_KEY = "ri0a-4a0b-lcyo-7qwb"
-SERVER_IP = "192.168.1.22"
-SERVER_PORT = 65431
+SERVER_IP = "16d.internet-box.ch"
+SERVER_PORT = 65432
+TCPClientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 PIR_LASTSTATE = 0
 
@@ -21,7 +22,6 @@ lcd.print("ButtonC : Ticker ADA-USD\n")
 
 
 def sendmsg(ip, port, message):
-    TCPClientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     TCPClientSocket.connect((ip, port))
     TCPClientSocket.sendall(message.encode('UTF-8'))
     msgServeur = TCPClientSocket.recv(1024)
