@@ -20,6 +20,6 @@ def get_chart(ticker):
          dict(count=6, label='6h', step="hour", stepmode="backward"), dict(step="all")])))
 
     # fig.show()
-    fig.write_html("./html/content.html")
+    fig.write_html("/var/www/html/ticker/content.html")
 
 # get_chart('BTC-USD')
