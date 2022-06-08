@@ -28,7 +28,6 @@ function setContent() {
 }
 
 function init() {
-    updateContent();
     setInterval(() => {
         updateContent();
     }, 5000);
